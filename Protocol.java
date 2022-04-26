@@ -7,7 +7,7 @@ public class Protocol {
 
     private int currentState = 0;
 
-    public Object inputHandler( String username, String inputLine) {
+    public Object inputHandler(String username, String inputLine) {
 
         Object output = null;
 
@@ -19,7 +19,7 @@ public class Protocol {
         } else if(currentState == INITIALIZED) {
 
             if(!inputLine.isBlank())
-                output = username+ ": " + inputLine;
+                output = username + inputLine;
         }
         return output;
     }

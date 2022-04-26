@@ -104,7 +104,7 @@ public class Client extends Thread implements ActionListener {
         Client client = new Client(socket);
 
         client.receiveMessage();
-        while(true);
+        //while(true);
     }
 
     @Override
@@ -114,6 +114,7 @@ public class Client extends Thread implements ActionListener {
         }
          if(actionEvent.getSource() == textField) {
             if(textField.getText().trim().length() != 0) {
+                textArea.append("Du: "+textField.getText()+"\n");
                 sendMessage(textField.getText());
                 textField.setText("");
             }
@@ -132,6 +133,7 @@ public class Client extends Thread implements ActionListener {
             if(ois != null) {
                 ois.close();
             }
+            textArea.append("Du kopplade ner.");
         } catch (IOException e) {
             e.printStackTrace();
         }
